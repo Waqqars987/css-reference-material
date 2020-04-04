@@ -1,0 +1,22 @@
+/* Inheritance works for fonts but has the lowest specificity */
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+#product-overview {
+	background: #ff1b68;
+}
+
+.section-title {
+	color: #2ddf5c;
+}
+
+/* Combinator: Increases the specificity when combined with a more specific rule */
+#product-overview h1 {
+	color: white;
+	font-family: 'Anton', sans-serif;
+}
+
+/* h1 {
+	font-family: sans-serif;
+} */
