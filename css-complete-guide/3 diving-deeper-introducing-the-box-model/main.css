@@ -1,20 +1,121 @@
+* {
+	/* box-sizing:border-box includes padding and border in the width and height of the element*/
+	/* All elements will have this property. It will override inheritance as well as browser defaults */
+	box-sizing: border-box;
+}
+
 body {
-    font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	/* Remove default body margin added by the browser */
+	margin: 0;
+}
+
+.main-header {
+	width: 100%;
+	background: #2ddf5c;
+	padding: 8px 16px;
+}
+
+.main-header > div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.main-header__brand {
+	color: #0e4f1f;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.main-nav {
+	display: inline-block;
+	text-align: right;
+	width: calc(100% - 74px);
+	vertical-align: middle;
+}
+
+.main-nav__items {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.main-nav__item {
+	display: inline-block;
+	margin: 0 16px;
+}
+
+.main-nav__item a {
+	text-decoration: none;
+	color: #0e4f1f;
+	font-weight: bold;
+	padding: 3px 0;
+}
+
+/* Grouped Rules*/
+.main-nav__item a:hover,
+.main-nav__item a:active {
+	color: white;
+	border-bottom: 5px solid white;
+}
+
+.main-nav__item--cta a {
+	color: white;
+	background: #ff1b68;
+	padding: 8px 16px;
+	border-radius: 8px;
+}
+
+.main-nav__item--cta a:hover,
+.main-nav__item--cta a:active {
+	color: #ff1b68;
+	background: white;
+	border: none;
 }
 
 #product-overview {
-    background: #ff1b68;
+	background: url("/freedom.jpg");
+	width: 100%;
+	/* relative height is depenedent on the surrounding containers height */
+	height: 528px;
+	padding: 10px;
+	/* border: 5px solid black;
+	margin: 10px; */
 }
 
 .section-title {
-    color: #2ddf5c;
+	color: #2ddf5c;
 }
 
 #product-overview h1 {
-    color: white;
-    font-family: 'Anton', sans-serif;
+	color: white;
+	font-family: 'Anton', sans-serif;
 }
 
-/* h1 {
-    font-family: sans-serif;
+/* .main-nav__item a::after {
+	content: " (Link)";
+	color: red;
 } */
+
+/* p::first-letter {
+	color: red;
+	font-size: 20px;
+} */
+
+/* h1 has margin by default
+h1 {
+	font-family: sans-serif;
+} */
+
+/* 
+Margin Collapsing: If we got 2 block elements next to each other than margins between them is collapsed to one margin. The bigger margin wins.
+Use 'margin-top' and 'margin-bottom' as workarounds.
+
+Block level elements unlike inline elements take the full available width by default. They also override the box-sizing.
+
+padding and border are not included into the width and height of the element by default.
+Content-Box: All elements have a certain way of calculating width and height
+
+White spaces in IDE are considered as elements in case of inline-block
+*/
