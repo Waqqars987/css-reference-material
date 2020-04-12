@@ -1,6 +1,6 @@
 #product-overview {
 	background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
-		url("images/freedom.jpg") left 10% bottom 45%/cover no-repeat border-box, #ff1b68;
+		url("images/freedom.jpg") left 10% bottom 45%/center no-repeat border-box, #ff1b68;
 	/* background-image: url("images/freedom.jpg"); */
 	/* background image will be in front of the background color  */
 	/* background-color: red; */
