@@ -1,0 +1,152 @@
+/* importing font from file system */
+/* woff2 and woff formats provide better compression */
+/* font-display only works with custom loaded fonts from the file system */
+/* @font-face {
+	font-family: 'AnonymousPro';
+	src: url("./anonymousPro-Regular.woff2") format("woff2"), url("./anonymousPro-Regular.woff") format("woff"),
+		url("./anonymousPro-Regular.ttf") format("truetype");
+} */
+
+/* block period: when user visits a page, the font isn't loaded yet but the space for the text is reserved with 
+an invisible fallback font
+
+swap period: when browser replaces the fallback font with the cutom laoded font */
+
+@font-face {
+	font-family: 'AnonymousPro';
+	src: url("./anonymousPro-Regular.ttf") format("truetype");
+	/* font-display: swap; */
+}
+
+@font-face {
+	font-family: 'AnonymousPro';
+	src: url("./anonymousPro-Bold.ttf") format("truetype");
+	font-weight: 700;
+}
+
+main {
+	padding-top: 2rem;
+}
+
+.background {
+	background: url("../images/plans-background.jpg") center/cover;
+	filter: grayscale(40%);
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: -1;
+}
+
+.package {
+	width: 80%;
+	margin: 1rem 0;
+	border: 4px solid #0e4f1f;
+	border-left: none;
+	position: relative;
+}
+
+.package:hover,
+.package:active {
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	border-color: #ff5454;
+	/* border-color: #ff5454 !important; */
+}
+
+.package a {
+	text-decoration: none;
+	color: inherit;
+	display: block;
+	padding: 2rem;
+}
+
+.package__badge {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 1.2rem;
+	font-size: 0.8rem;
+	color: white;
+	background: #ff5454;
+	padding: 0.5rem;
+}
+
+.package__subtitle {
+	color: #979797;
+}
+
+.package__info {
+	padding: 1rem;
+	border: 1px solid #0e4f1f;
+	font-size: 1.2rem;
+	color: #0e4f1f;
+	background: white;
+	/* font-family: "AnonymousPro", sans-serif; */
+	/* font-weight: 700; */
+	/* if font style is not imported from web font, then the browser will perform the styling on its own if we mention it */
+	/* font-style: italic; */
+	/* line lets us define the top and bottom of the content box ( font size * line height).
+		By default line height depends on the font family we are using. */
+	/* line-height: 2; */
+	/* text-decoration: overline wavy red; */
+	/* text-shadow: 2px 2px 7px rgb(185, 180, 180); */
+	/* order for font shorthand: font-style font-variant font-weight font-size/line-height font-family */
+	/* font: italic small-caps 700 1.2rem/2 "AnonymousPro", sans-serif; */
+	/* using system fonts from menu */
+	/* font: menu; */
+}
+
+.clearfix {
+	clear: both;
+}
+
+#plus {
+	background: rgba(213, 255, 220, 0.95);
+}
+
+#free {
+	background: rgba(234, 252, 237, 0.95);
+	float: right;
+	border-right: none;
+	border-left: 4px solid #0e4f1f;
+	text-align: right;
+}
+
+#free:hover,
+#free:active {
+	border-left-color: #ff5454;
+}
+
+#premium {
+	background: rgba(14, 79, 31, 0.95);
+}
+
+#premium .package__title {
+	color: white;
+}
+
+#premium .package__subtitle {
+	color: #bbb;
+}
+
+@media (min-width: 40rem) {
+	main {
+		max-width: 1500px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media (min-width: 1500px) {
+	.package {
+		border-left: 4px solid #0e4f1f;
+	}
+
+	#free {
+		border-right: 4px solid #0e4f1f;
+	}
+
+	#free:hover,
+	#free:active {
+		border-right-color: #ff5454;
+	}
+}
