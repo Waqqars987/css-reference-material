@@ -1,0 +1,119 @@
+* {
+	box-sizing: border-box;
+	font-size: 1.5rem;
+}
+
+html {
+	background: #b3b3b3;
+	padding: 5px;
+}
+
+body {
+	background: #b3b3b3;
+	padding: 5px;
+	margin: 0;
+}
+
+.flex-container {
+	background: white;
+	padding: 10px;
+	border: 5px solid black;
+	display: flex;
+	height: 1300;
+	/* Default values: */
+	/* row makes elements behave like inline elements */
+	/* flex-direction: row; */
+	/* flex-wrap: nowrap; */
+	/* align-items: stretch; */
+	/*******************/
+	/* column makes elements behave like block elements */
+	flex-direction: row;
+	flex-wrap: nowrap;
+	/* flex-flow: row wrap; */
+	/* align-items will align the elements according to the cross axis */
+	/* align-tems:baseline will align items as per the baseline of the content of the elements */
+	align-items: center;
+	/* justify-content will align items to the main axis */
+	justify-content: flex-start;
+	/* align-content allows us to align our element's content according to the cross axis */
+	/* align-content: center; */
+}
+
+.item-1 {
+	background: #ff7300;
+	color: white;
+	padding: 10px;
+	border: 5px solid black;
+	margin: 10px;
+}
+
+.item-2 {
+	background: #ff9640;
+	color: white;
+	padding: 10px;
+	border: 5px solid black;
+	margin: 10px;
+	width: 250px;
+	font-size: 1.8rem;
+}
+
+.item-3 {
+	background: #ff9640;
+	color: white;
+	padding: 10px;
+	border: 5px solid black;
+	margin: 10px;
+	height: 250px;
+	/* align-self will position element which is part of a flex container in relation with the cross axis */
+	/* align-self: flex-end; */
+}
+
+.item-4 {
+	background: #f5c096;
+	color: white;
+	padding: 10px;
+	border: 5px solid black;
+	margin: 10px;
+	width: 300px;
+	height: 300px;
+	/* order allows us to change the their order which is different from their order in HTML. It is 0 by default.
+	Higher order means later in display order and vice versa. */
+	/* order: -1; */
+}
+
+.item-5 {
+	background: #d3c0b1;
+	color: white;
+	padding: 10px;
+	border: 5px solid black;
+	margin: 10px;
+	width: 350px;
+	/* height: 200px; */
+	/* default value for flex-grow is 0 */
+	/* flex-grow will distribute the empty spaces between the elements using this property proportionately */
+	/* flex-grow: 1; */
+	/* default value for flex-shrink is 1 */
+	/* flex-shrink: 1; */
+	/* flex-basis defines the size of the element depending on the main axis. It will overrride specified dimension(width or height) 
+	or fallback to it if it is set to auto.
+	% values can also be used based on the flex container */
+	flex-basis: 300px;
+	flex-shrink: 0;
+	/* flex shorthand: flex-grow flex-shrink flex-basis */
+	flex: 0 1 auto;
+}
+
+.item-6 {
+	background: #d3c0b1;
+	color: white;
+	padding: 10px;
+	border: 5px solid black;
+	margin: 10px;
+	width: 350px;
+	/* flex-grow: 4; */
+	/* flex-shrink allows us first to specify if an element is allowed to shrink and if it is then it controls how much an element 
+	is allowed to shrink compared to another element */
+	/* flex-shrink: 0 will not allow the element to shrink below its defined width */
+	/* flex-shrink: 4; */
+	/* flex-shrink: 0; */
+}
