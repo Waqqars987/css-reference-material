@@ -1,0 +1,98 @@
+.container {
+	margin: 20px;
+	height: 800px;
+	/* width: 800px; */
+	/* by default grid will create one colum and rows equal to the number of direct child elements in the container */
+	display: grid;
+	/* fr will split up the remianing space between the columns with fractional units proportionately.
+	auto will also fill the remaining space */
+	/* grid-template-columns: 200px 2fr 20% auto; */
+	/* create 4 equaly sized named columns */
+	grid-template-columns: [hd-start] repeat(4, [col-start] 20% [col-end]) [hd-end];
+	/* rows are flexible by default. if more elements are added, extra rows will be created as required */
+	/* grid-template-rows: 5rem auto; */
+	/* minmax specifies minimum and maximum width or heights */
+	/* grid-template-rows: [hd-start] 5rem [hd-end row-2-start] minmax(10px, auto) [row-2-end row-3-start] 100px */
+	grid-template-rows: [hd-start] 5rem [hd-end row-2-start] minmax(10px, 20rem) [row-2-end row-3-start] 100px
+		[row-3-end];
+	/* grid-column-gap: 20px;
+	grid-row-gap: 10px; */
+	/* shorthand for gaps: row gap, column gap.
+	One value will be taken as value for both rows and columns */
+	grid-gap: 10px;
+	/* with grid areas, the DOM order is not respected  */
+	grid-template-areas: 'header header header header' '. side main main' 'footer footer footer footer';
+	/* justify-items positions items in their grid rows.
+	Default value is stretch */
+	justify-items: stretch;
+	/* align-items positions items in their grid columns.
+	Default value is stretch */
+	align-items: stretch;
+	/* justify-content positions the grid content on the x-axis. It wont override the grid setup values though.
+	Default value is stretch */
+	/* justify-content: center; */
+	/* align-content positions the grid content on the y-axis. It wont override the grid setup values though.
+	Default value is stretch */
+	/* align-content: center; */
+}
+
+/* Responsive Grid */
+@media (max-width: 40rem) {
+	.container {
+		grid-template-rows: [hd-start] 5rem [hd-end row-2-start] minmax(10px, 20rem) [row-2-end row-3-start] 150px
+			[row-3-end row-4-start] 100px [row-4-end];
+
+		grid-template-areas: 'header header header header' 'main main main main' 'side side side side'
+			'footer footer footer footer';
+	}
+}
+
+.el1 {
+	background: rgba(255, 154, 72, 0.5);
+	/* number after the column-name specifies the number of occurence of the auto generated columns */
+	/* grid-column: col-start 2 / col-end 2; */
+	grid-area: side;
+}
+
+.el2 {
+	background: rgba(255, 0, 0, 0.5);
+	/* grid-column-start: 1;
+	grid-column-end: -1;
+	grid-row-start: row-2-start;
+	grid-row-end: span 1; */
+	/* shorthands */
+	/* grid-column: 1 / -1;
+	grid-row: row-2-start / span 1; */
+	/* grid elements can overlap. grid tries to avoid this but we can achieve it manually. The stack depends on the DOM order of the
+	elements which can also be changed using the z-index */
+	z-index: 10;
+	grid-area: main;
+	/* positioning grid elements individually */
+	/* positions along the x-axis */
+	/* justify-self: center;  */
+	/* positions along the y-axis */
+	/* align-self: center;  */
+}
+
+.el3 {
+	background: rgba(0, 128, 0, 0.5);
+	/* grid-column-start: 2; */
+	/* by default en element will span one column only */
+	/* grid-column-end: 5; */
+	/* span 3 cells after starting from line 2 */
+	/* grid-column-end: span 3;
+	grid-row-start: row-1-start; */
+	/* by default en element will span one row only */
+	/* grid-row-end: row-2-end; */
+	/* shorthands for entire grid area */
+	/* row start / column start/ row end / column end */
+	/* grid-area: row-1-start / 2 / row-2-end / span 3; */
+	/* grid-area: header; */
+	/* using auto generated area from the row and column setups */
+	grid-area: hd;
+}
+
+.el4 {
+	background: rgba(0, 4, 255, 0.5);
+	grid-area: footer;
+}

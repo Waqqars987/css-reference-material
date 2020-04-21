@@ -1,0 +1,41 @@
+.container {
+	margin: 20px;
+	display: grid;
+	/* 'auto-fill' will ensure that it fills the current with as many items as possible in the viewport and then wrap and enter a new row */
+	/* grid-template-columns: repeat(auto-fill, 10rem); */
+	grid-template-columns: repeat(3, 10rem);
+	/* 'auto-fit' works like auto-fill and also centers the items automatically  */
+	/* grid-template-columns: repeat(auto-fit, 10rem); */
+	grid-template-rows: 20rem;
+	justify-content: center;
+	grid-gap: 1.5rem;
+	/* grid-auto-rows allows us to define the size of the newly added auto generated rows */
+	grid-auto-rows: minmax(8rem, auto);
+	/* grid-auto-flow allows to define where the newly added items should be placed. Deafault value is 'row' */
+	/* 'dense' will make sure any free space is filled in the grid. It does not respect the DOM order. Its recommended as it may cause
+  accessibility problems (screen reader) */
+	grid-auto-flow: row dense;
+	/* grid-auto-columns allows us to define the size of the newly added auto generated columns */
+	grid-auto-columns: 5rem;
+	/* The values of the all the grid-auto properties will be overriden by the value set in the grid-template properties */
+	/* Implicit Grid: The part of the grid that is defined automatically,
+  Explicit Grid: The part of the grid that is defined manually */
+}
+
+.quote {
+	border: 1px solid #fa923f;
+	background: #ffbd87;
+	font-family: sans-serif;
+	padding: 1rem;
+	border-radius: 5px;
+}
+
+.quote:nth-of-type(2) {
+	grid-column: span 2;
+}
+
+.quote--featured {
+	border: #ff4213;
+	background: #ff9f87;
+	grid-column: span 2;
+}
