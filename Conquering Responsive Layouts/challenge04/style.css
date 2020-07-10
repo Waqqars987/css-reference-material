@@ -39,36 +39,28 @@ h1 {
 	width: 80%;
 	max-width: 1100px;
 	margin: 0 auto;
-	padding: 3em 0;
 }
 
 .row {
+	/* display: flex => flex container */
 	display: flex;
-	text-align: center;
+
 	/* can't use yet */
 	/* gap: 100px; */
 }
 
 .col {
+	/* these are now flex items */
 	width: 100%;
 }
 
 .col + .col {
-	margin-left: 1.875em;
-}
-
-.title--colored {
-	color: #87629a;
+	margin-left: 30px;
 }
 
 .hero {
 	padding: 100px 0;
 	background-color: #23424a;
-	color: #fff;
-}
-
-.hero--dark {
-	background-color: #136c72;
 	color: #fff;
 }
 
@@ -78,6 +70,22 @@ h1 {
 
 .hero p {
 	margin-bottom: 3em;
+}
+
+.three-col {
+	text-align: center;
+	padding: 3em 0;
+}
+
+.three-col h2 {
+	color: #876298;
+}
+
+.two-col {
+	text-align: center;
+	padding: 3em 0;
+	background: #136c72;
+	color: white;
 }
 
 .btn {
