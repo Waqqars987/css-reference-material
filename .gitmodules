@@ -1,3 +1,6 @@
 [submodule "What-The-Flexbox"]
 	path = What-The-Flexbox
 	url = https://github.com/wesbos/What-The-Flexbox.git
+[submodule "CSS-Grid"]
+	path = CSS-Grid
+	url = https://github.com/wesbos/css-grid.git
